@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iPhone 17 Pro Max — Apple</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=SF+Pro+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ───────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: 'SF Pro Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: rgba(255,255,255,0.15); color: #fff; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Scrollbar ──────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #111; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+
+    /* ── Typography ─────────────────────────────── */
+    .font-display { font-family: 'SF Pro Display', sans-serif; }
+    .text-gradient {
+      background: linear-gradient(135deg, #e8d5b7 0%, #f5e6c8 40%, #d4b896 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .text-muted { color: #86868b; }
+    .text-upper { letter-spacing: 0.12em; text-transform: uppercase; }
+
+    /* ── Nav ────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 48px;
+      height: 48px; display: flex; align-items: center;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    nav .logo { font-size: 1.125rem; font-weight: 600; letter-spacing: -0.01em; }
+    nav .nav-links { display: flex; gap: 28px; margin-left: auto; list-style: none; }
+    nav .nav-links li a {
+      font-size: 0.8125rem; font-weight: 400; color: #d2d2d7;
+      transition: color 0.2s;
+    }
+    nav .nav-links li a:hover { color: #fff; }
+    nav .nav-cta {
+      margin-left: 32px;
+      padding: 6px 16px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 24px;
+      font-size: 0.75rem; font-weight: 500;
+      color: #fff; transition: all 0.25s;
+    }
+    nav .nav-cta:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
+
+    /* ── Hero ───────────────────────────────────── */
+    .hero {
+      height: 100vh; min-height: 700px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(50,30,10,0.6) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 300px;
+      background: linear-gradient(to top, #000 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+      color: #bd8b4a; margin-bottom: 16px; position: relative; z-index: 1;
+    }
+    .hero h1 {
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 700; line-height: 1.02; letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #fff 30%, #c9b896 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      position: relative; z-index: 1; margin-bottom: 8px;
+    }
+    .hero-sub {
+      font-size: 1.5rem; font-weight: 400; color: #86868b;
+      margin-top: 8px; margin-bottom: 40px; position: relative; z-index: 1;
+    }
+    .hero-price {
+      font-size: 1rem; color: #86868b; margin-bottom: 40px; position: relative; z-index: 1;
+    }
+    .hero-price span { color: #fff; font-weight: 500; }
+    .hero-ctas { display: flex; gap: 20px; position: relative; z-index: 1; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px;
+      background: #0071e3; color: #fff;
+      border-radius: 980px; font-size: 0.9375rem; font-weight: 500;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-primary:hover { background: #0077ED; transform: scale(1.02); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px;
+      border: 1.5px solid rgba(255,255,255,0.25); color: #fff;
+      border-radius: 980px; font-size: 0.9375rem; font-weight: 500;
+      transition: all 0.25s;
+    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.06); }
+    .hero-scroll-hint {
+      position: absolute; bottom: 48px; left: 50%; transform: translateX(-50%);
+      z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;
+      opacity: 0.5; animation: float 2.5s ease-in-out infinite;
+    }
+    .hero-scroll-hint span { font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    .hero-scroll-hint .arrow {
+      width: 20px; height: 20px;
+      border-right: 1.5px solid rgba(255,255,255,0.6);
+      border-bottom: 1.5px solid rgba(255,255,255,0.6);
+      transform: rotate(45deg);
+    }
+    @keyframes float { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+
+    /* ── Film Banner ────────────────────────────── */
+    .film-banner {
+      padding: 120px 48px;
+      text-align: center; position: relative;
+      background: linear-gradient(to bottom, #000, #0a0a0a);
+    }
+    .film-banner .eyebrow {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #86868b; margin-bottom: 20px;
+    }
+    .film-banner h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700; line-height: 1.08; letter-spacing: -0.025em;
+      max-width: 800px; margin: 0 auto 24px;
+    }
+    .film-banner .subtitle {
+      font-size: 1.25rem; color: #86868b; max-width: 600px; margin: 0 auto 60px; line-height: 1.6;
+    }
+    .film-screen {
+      max-width: 1100px; margin: 0 auto;
+      aspect-ratio: 16/9;
+      background: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a12 60%, #000 100%);
+      border-radius: 16px; overflow: hidden;
+      position: relative; display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .film-screen::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 30% 50%, rgba(100,80,200,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(60,120,200,0.1) 0%, transparent 50%);
+    }
+    .film-screen .play-btn {
+      width: 80px; height: 80px;
+      background: rgba(255,255,255,0.12);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(10px); cursor: pointer; transition: all 0.3s; z-index: 1;
+    }
+    .film-screen .play-btn:hover { background: rgba(255,255,255,0.22); transform: scale(1.06); }
+    .film-screen .play-btn svg { fill: #fff; width: 28px; height: 28px; margin-left: 4px; }
+    .film-caption { margin-top: 28px; font-size: 0.875rem; color: #6e6e73; }
+
+    /* ── Camera Hero ────────────────────────────── */
+    .camera-intro {
+      padding: 0 48px 120px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+      max-width: 1400px; margin: 0 auto;
+    }
+    .camera-intro .text-col { padding-top: 60px; }
+    .camera-intro .eyebrow {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #bd8b4a; margin-bottom: 16px;
+    }
+    .camera-intro h2 {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 700; line-height: 1.1; letter-spacing: -0.025em;
+      margin-bottom: 24px;
+    }
+    .camera-intro p { font-size: 1.125rem; color: #86868b; line-height: 1.7; margin-bottom: 48px; }
+    .camera-specs-list { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+    .camera-specs-list li {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .camera-specs-list li:last-child { border-bottom: none; }
+    .spec-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .spec-icon svg { width: 22px; height: 22px; fill: #bd8b4a; }
+    .spec-content .spec-title { font-size: 0.9375rem; font-weight: 600; color: #fff; margin-bottom: 4px; }
+    .spec-content .spec-desc { font-size: 0.875rem; color: #86868b; line-height: 1.5; }
+    .visual-col {
+      position: relative; height: 600px; display: flex; align-items: center; justify-content: center;
+    }
+    .lens-visual {
+      width: 420px; height: 420px; position: relative;
+    }
+    .lens-ring {
+      position: absolute; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.12);
+    }
+    .lens-ring:nth-child(1) { inset: 0; animation: pulse-ring 4s ease-in-out infinite; }
+    .lens-ring:nth-child(2) { inset: 30px; border-color: rgba(189,139,74,0.3); animation: pulse-ring 4s ease-in-out infinite 0.5s; }
+    .lens-ring:nth-child(3) { inset: 70px; border-color: rgba(189,139,74,0.2); animation: pulse-ring 4s ease-in-out infinite 1s; }
+    .lens-core {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, #1a1a2e 0%, #0a0a16 50%, #000 100%);
+      border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .lens-core::after {
+      content: '';
+      width: 100px; height: 100px;
+      background: radial-gradient(circle, rgba(189,139,74,0.3) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .lens-label {
+      position: absolute; font-size: 0.625rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.4);
+    }
+    .lens-label.top { top: -30px; left: 50%; transform: translateX(-50%); }
+    .lens-label.bottom { bottom: -30px; left: 50%; transform: translateX(-50%); }
+    .lens-label.left { left: -20px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+    .lens-label.right { right: -20px; top: 50%; transform: translateY(-50%) rotate(90deg); }
+    @keyframes pulse-ring {
+      0%,100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.02); }
+    }
+
+    /* ── Stats Bar ──────────────────────────────── */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .stat-item { padding: 60px 48px; text-align: center; border-right: 1px solid rgba(255,255,255,0.06); }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-size: clamp(2.5rem, 4vw, 3.75rem);
+      font-weight: 700; letter-spacing: -0.03em; line-height: 1;
+      background: linear-gradient(135deg, #fff 0%, #c9b896 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 8px;
+    }
+    .stat-label { font-size: 0.875rem; color: #86868b; line-height: 1.4; }
+
+    /* ── Camera Sections ─────────────────────────── */
+    .camera-section {
+      padding: 140px 48px;
+      position: relative;
+    }
+    .camera-section .container { max-width: 1300px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #bd8b4a; margin-bottom: 16px;
+    }
+    .section-headline {
+      font-size: clamp(2.25rem, 4vw, 3.5rem);
+      font-weight: 700; line-height: 1.1; letter-spacing: -0.025em;
+      max-width: 700px; margin-bottom: 20px;
+    }
+    .section-body {
+      font-size: 1.125rem; color: #86868b; line-height: 1.7;
+      max-width: 560px; margin-bottom: 0;
+    }
+
+    /* Section: Triple 48MP */
+    .triple-section {
+      background: linear-gradient(to bottom, #000 0%, #0d0d0d 50%, #000 100%);
+    }
+    .triple-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+      margin-top: 80px;
+    }
+    .triple-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px; padding: 48px 36px;
+      text-align: center; transition: all 0.4s;
+      position: relative; overflow: hidden;
+    }
+    .triple-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(189,139,74,0.08) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.4s;
+    }
+    .triple-card:hover { background: rgba(255,255,255,0.04); transform: translateY(-4px); }
+    .triple-card:hover::before { opacity: 1; }
+    .triple-card-icon { margin-bottom: 32px; position: relative; z-index: 1; }
+    .triple-card h3 {
+      font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em;
+      margin-bottom: 8px; position: relative; z-index: 1;
+    }
+    .triple-card .card-type {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+      color: #bd8b4a; margin-bottom: 20px; position: relative; z-index: 1;
+    }
+    .triple-card p { font-size: 0.9375rem; color: #86868b; line-height: 1.6; position: relative; z-index: 1; }
+    .focal-badge {
+      display: inline-block; margin-top: 20px;
+      padding: 6px 16px;
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 980px;
+      font-size: 0.75rem; color: #d2d2d7; font-weight: 500;
+      position: relative; z-index: 1;
+    }
+
+    /* Section: Telephoto Zoom */
+    .zoom-section {
+      background: #000;
+    }
+    .zoom-section .section-headline { text-align: center; max-width: 100%; }
+    .zoom-section .section-body { text-align: center; max-width: 100%; }
+    .zoom-visual {
+      margin-top: 80px; text-align: center;
+      position: relative;
+    }
+    .zoom-bar {
+      display: flex; justify-content: center; align-items: flex-end; gap: 0;
+      height: 200px; position: relative;
+    }
+    .zoom-bar::before {
+      content: '';
+      position: absolute; top: 0; bottom: 60px; left: 50%; transform: translateX(-50%);
+      width: 1px; background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent);
+    }
+    .zoom-legend {
+      display: flex; justify-content: center; gap: 60px; margin-top: 32px;
+    }
+    .zoom-legend-item { text-align: center; }
+    .zoom-legend-item .num {
+      font-size: 2rem; font-weight: 700; letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #fff 0%, #c9b896 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .zoom-legend-item .label { font-size: 0.8125rem; color: #86868b; margin-top: 4px; }
+
+    /* Section: Pro Fusion */
+    .fusion-section {
+      background: linear-gradient(to bottom, #000 0%, #0c0c14 50%, #000 100%);
+    }
+    .fusion-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+      margin-top: 80px;
+    }
+    .fusion-visual {
+      aspect-ratio: 1; border-radius: 24px;
+      background: radial-gradient(circle at 40% 40%, #1a1a30 0%, #0a0a18 60%, #000 100%);
+      border: 1px solid rgba(255,255,255,0.06);
+      display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 2px;
+      overflow: hidden; position: relative;
+    }
+    .fusion-tile {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.15); text-transform: uppercase;
+    }
+    .fusion-tile:nth-child(1) { background: rgba(100,80,200,0.1); }
+    .fusion-tile:nth-child(2) { background: rgba(60,120,200,0.08); }
+    .fusion-tile:nth-child(3) { background: rgba(200,80,100,0.08); }
+    .fusion-tile:nth-child(4) { background: rgba(80,160,100,0.06); }
+    .fusion-text h3 {
+      font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 20px;
+    }
+    .fusion-text p { font-size: 1rem; color: #86868b; line-height: 1.75; margin-bottom: 32px; }
+    .fusion-features { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .fusion-features li {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 0.9375rem; color: #d2d2d7;
+    }
+    .fusion-features li::before {
+      content: ''; width: 20px; height: 20px; border-radius: 50%;
+      background: rgba(189,139,74,0.2); border: 1px solid rgba(189,139,74,0.4);
+      flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    }
+    .fusion-features li::after {
+      content: '✓'; font-size: 0.625rem; color: #bd8b4a;
+    }
+
+    /* Section: Cinematic Video */
+    .cinematic-section {
+      background: linear-gradient(to bottom, #000, #08080e);
+      overflow: hidden;
+    }
+    .cinematic-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 100% 80% at 50% 100%, rgba(30,20,60,0.5) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(60,40,100,0.15) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .cinematic-content { position: relative; z-index: 1; }
+    .cinematic-section .section-headline { text-align: center; max-width: 100%; }
+    .cinematic-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;
+      margin-top: 80px;
+    }
+    .cinema-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px; padding: 40px 32px;
+      transition: all 0.3s;
+    }
+    .cinema-card:hover { background: rgba(255,255,255,0.06); transform: translateY(-2px); }
+    .cinema-icon { margin-bottom: 24px; }
+    .cinema-card h4 { font-size: 1.125rem; font-weight: 600; margin-bottom: 10px; }
+    .cinema-card p { font-size: 0.875rem; color: #86868b; line-height: 1.6; }
+    .cinema-tag {
+      display: inline-block; margin-top: 16px;
+      padding: 4px 12px; border-radius: 6px;
+      font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em;
+      background: rgba(189,139,74,0.15); color: #bd8b4a;
+      text-transform: uppercase;
+    }
+
+    /* ── Display Section ────────────────────────── */
+    .display-section {
+      padding: 140px 48px;
+      background: linear-gradient(to bottom, #000, #0a0a0a);
+      text-align: center;
+    }
+    .display-section .container { max-width: 1100px; margin: 0 auto; }
+    .display-screen {
+      margin-top: 64px;
+      aspect-ratio: 20/9;
+      border-radius: 16px; overflow: hidden;
+      background: radial-gradient(ellipse at 50% 60%, #111128 0%, #0a0a14 40%, #000 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .display-screen::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 30% 50%, rgba(100,80,200,0.2) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 40% at 70% 60%, rgba(60,100,200,0.15) 0%, transparent 50%);
+    }
+    .display-screen .screen-text {
+      position: relative; z-index: 1; text-align: center;
+    }
+    .display-screen .screen-text .big {
+      font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #fff 40%, #c9b896 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .display-screen .screen-text .small {
+      font-size: 0.875rem; color: #86868b; margin-top: 8px;
+    }
+
+    /* ── Chip Section ────────────────────────────── */
+    .chip-section {
+      padding: 140px 48px;
+      background: linear-gradient(to bottom, #000 0%, #0c0c0c 100%);
+    }
+    .chip-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+      max-width: 1300px; margin: 0 auto;
+    }
+    .chip-visual {
+      aspect-ratio: 1; border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a14 50%, #000 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center; position: relative;
+    }
+    .chip-visual::before {
+      content: 'A19 Pro'; font-size: 2rem; font-weight: 800; letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #fff 0%, #c9b896 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .chip-visual::after {
+      content: ''; position: absolute; inset: -1px;
+      border-radius: 50%; border: 1px solid rgba(189,139,74,0.2);
+      animation: spin-slow 20s linear infinite;
+    }
+    @keyframes spin-slow { to { transform: rotate(360deg); } }
+    .chip-text h2 {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+      letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 20px;
+    }
+    .chip-text p { font-size: 1rem; color: #86868b; line-height: 1.7; margin-bottom: 40px; }
+    .chip-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .chip-stat {
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px; padding: 24px;
+    }
+    .chip-stat .num { font-size: 1.75rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .chip-stat .desc { font-size: 0.8125rem; color: #86868b; }
+
+    /* ── Colors ─────────────────────────────────── */
+    .colors-section {
+      padding: 140px 48px;
+      background: linear-gradient(to bottom, #0c0c0c, #000);
+      text-align: center;
+    }
+    .colors-section .container { max-width: 1300px; margin: 0 auto; }
+    .color-swatches {
+      display: flex; justify-content: center; gap: 60px; margin-top: 60px;
+    }
+    .swatch {
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+      cursor: pointer;
+    }
+    .swatch-circle {
+      width: 64px; height: 64px; border-radius: 50%;
+      border: 2px solid transparent; transition: all 0.3s;
+    }
+    .swatch:hover .swatch-circle { transform: scale(1.1); }
+    .swatch-label { font-size: 0.875rem; color: #86868b; font-weight: 500; }
+    .swatch.selected .swatch-label { color: #fff; }
+    .swatch.selected .swatch-circle { border-color: #fff; }
+
+    /* ── CTA Section ────────────────────────────── */
+    .cta-section {
+      padding: 160px 48px;
+      text-align: center;
+      background: linear-gradient(to bottom, #000, #0a0a10);
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% 60%, rgba(50,30,10,0.5) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-section .container { position: relative; z-index: 1; }
+    .cta-section h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700; letter-spacing: -0.03em; line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .cta-section p { font-size: 1.25rem; color: #86868b; margin-bottom: 48px; }
+    .cta-section .price-line { font-size: 1rem; color: #6e6e73; margin-bottom: 40px; }
+    .cta-section .price-line span { color: #fff; font-weight: 500; }
+    .cta-buttons { display: flex; justify-content: center; gap: 20px; margin-bottom: 80px; }
+
+    /* ── Footer ─────────────────────────────────── */
+    footer {
+      padding: 48px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: #000;
+    }
+    footer .footer-inner {
+      max-width: 1300px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    footer .footer-logo { font-size: 0.875rem; font-weight: 600; }
+    footer .footer-links { display: flex; gap: 24px; list-style: none; }
+    footer .footer-links li a { font-size: 0.75rem; color: #86868b; transition: color 0.2s; }
+    footer .footer-links li a:hover { color: #fff; }
+    footer .footer-copy { font-size: 0.75rem; color: #6e6e73; }
+
+    /* ── Animations ─────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Responsive ─────────────────────────────── */
+    @media (max-width: 1024px) {
+      nav { padding: 0 24px; }
+      nav .nav-links { display: none; }
+      .hero { padding: 0 24px; }
+      .camera-intro { grid-template-columns: 1fr; gap: 40px; }
+      .camera-intro .visual-col { height: 400px; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .triple-grid { grid-template-columns: 1fr; }
+      .fusion-grid { grid-template-columns: 1fr; }
+      .cinematic-grid { grid-template-columns: 1fr; }
+      .chip-grid { grid-template-columns: 1fr; }
+      .chip-visual { max-width: 350px; margin: 0 auto; }
+    }
+    @media (max-width: 768px) {
+      .film-banner { padding: 80px 24px; }
+      .camera-section { padding: 80px 24px; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .stat-item { padding: 40px 24px; }
+      .hero h1 { font-size: 2.75rem; }
+      .hero-sub { font-size: 1.125rem; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .color-swatches { gap: 32px; flex-wrap: wrap; }
+      footer .footer-inner { flex-direction: column; gap: 24px; text-align: center; }
+      footer .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="#" class="logo">iPhone 17 Pro Max</a>
+    <ul class="nav-links">
+      <li><a href="#camera">Camera</a></li>
+      <li><a href="#chip">A19 Pro</a></li>
+      <li><a href="#display">Display</a></li>
+      <li><a href="#design">Design</a></li>
+    </ul>
+    <a href="#buy" class="nav-cta">Pre-order</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <p class="hero-eyebrow">iPhone 17 Pro Max</p>
+    <h1>Shot on iPhone.<br>Elevated.</h1>
+    <p class="hero-sub">Pro Fusion Camera System</p>
+    <p class="hero-price">From <span>$1,199</span> or $49.95/mo. for 24 mo.*</p>
+    <div class="hero-ctas">
+      <a href="#buy" class="btn-primary">Pre-order Now →</a>
+      <a href="#camera" class="btn-secondary">Explore the Camera</a>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- Film Banner -->
+  <section class="film-banner">
+    <p class="eyebrow">Apple Original Film</p>
+    <h2>See beyond the frame.</h2>
+    <p class="subtitle">Shot entirely on iPhone 17 Pro Max. The most cinematic iPhone ever created.</p>
+    <div class="film-screen">
+      <div class="play-btn">
+        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+      </div>
+    </div>
+    <p class="film-caption">Watch the film — 2 min 34 sec</p>
+  </section>
+
+  <!-- Camera Intro -->
+  <section class="camera-intro" id="camera">
+    <div class="text-col reveal">
+      <p class="eyebrow">Pro Fusion Camera System</p>
+      <h2>48MP across<br>every lens.</h2>
+      <p>For the first time, all three rear cameras — Ultra Wide, Fusion, and Telephoto — share the same 48MP sensor. The result is unprecedented consistency, detail, and creative freedom.</p>
+      <ul class="camera-specs-list">
+        <li>
+          <div class="spec-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <div class="spec-content">
+            <div class="spec-title">48MP Fusion Camera</div>
+            <div class="spec-desc">Second-generation 48MP sensor with 2x optical-quality zoom. Captures 4K ProRes video directly to external storage.</div>
+          </div>
+        </li>
+        <li>
+          <div class="spec-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 12h18M12 3l9 18" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div class="spec-content">
+            <div class="spec-title">8x Telephoto Optical-Quality Zoom</div>
+            <div class="spec-desc">Next-generation tetraprism design with a 56% larger sensor. 200mm equivalent focal length. No other iPhone comes close.</div>
+          </div>
+        </li>
+        <li>
+          <div class="spec-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5 2 7L12 16l-6.5 4.5 2-7L2 9h7z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="spec-content">
+            <div class="spec-title">48MP Ultra Wide</div>
+            <div class="spec-desc">The widest field of view ever on iPhone. Quad Pixel sensor for stunning macro photography and architecture shots.</div>
+          </div>
+        </li>
+        <li>
+          <div class="spec-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div class="spec-content">
+            <div class="spec-title">48MP Center Stage Front Camera</div>
+            <div class="spec-desc">Auto-focus and a wider aperture. Center Stage keeps you perfectly framed on every FaceTime call and selfie.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="visual-col">
+      <div class="lens-visual">
+        <div class="lens-ring"></div>
+        <div class="lens-ring"></div>
+        <div class="lens-ring"></div>
+        <div class="lens-core"></div>
+        <span class="lens-label top">F/1.78</span>
+        <span class="lens-label bottom">200mm</span>
+        <span class="lens-label left">Ultra Wide</span>
+        <span class="lens-label right">Fusion</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar reveal">
+    <div class="stat-item">
+      <div class="stat-number">48MP</div>
+      <div class="stat-label">All Rear Cameras</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">8×</div>
+      <div class="stat-label">Optical-Quality Zoom</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">200mm</div>
+      <div class="stat-label">Telephoto Focal Length</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4K</div>
+      <div class="stat-label">ProRes to External Storage</div>
+    </div>
+  </div>
+
+  <!-- Triple Cameras Section -->
+  <section class="camera-section triple-section">
+    <div class="container">
+      <p class="section-eyebrow">Triple 48MP System</p>
+      <h2 class="section-headline">Three lenses.<br>One resolution.</h2>
+      <p class="section-body">Every camera now shoots at 48MP. Seamless switching between lenses means no compromise in quality — no matter which focal length you choose.</p>
+    </div>
+    <div class="triple-grid">
+      <div class="triple-card reveal">
+        <div class="triple-card-icon">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="28" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+            <circle cx="32" cy="32" r="16" stroke="#bd8b4a" stroke-width="1.5"/>
+            <circle cx="32" cy="32" r="6" fill="rgba(189,139,74,0.4)"/>
+          </svg>
+        </div>
+        <h3>Ultra Wide</h3>
+        <p class="card-type">13mm equivalent</p>
+        <p>Our widest camera ever. Capture sweeping landscapes, dense architecture, and intricate macro detail with stunning edge-to-edge clarity.</p>
+        <span class="focal-badge">ƒ/2.2 · 120° FOV</span>
+      </div>
+      <div class="triple-card reveal">
+        <div class="triple-card-icon">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="28" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+            <circle cx="32" cy="32" r="16" stroke="#bd8b4a" stroke-width="1.5"/>
+            <circle cx="32" cy="32" r="6" fill="rgba(189,139,74,0.4)"/>
+          </svg>
+        </div>
+        <h3>Fusion</h3>
+        <p class="card-type">24mm equivalent</p>
+        <p>The default pro lens. 2x optical-quality zoom unlocked through pixel-binning. Shoot 48MP ProRAW and 4K 120fps Cinematic video.</p>
+        <span class="focal-badge">ƒ/1.78 · Sensor-shift OIS</span>
+      </div>
+      <div class="triple-card reveal">
+        <div class="triple-card-icon">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="28" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+            <circle cx="32" cy="32" r="16" stroke="#bd8b4a" stroke-width="1.5"/>
+            <circle cx="32" cy="32" r="6" fill="rgba(189,139,74,0.4)"/>
+          </svg>
+        </div>
+        <h3>Telephoto</h3>
+        <p class="card-type">200mm equivalent</p>
+        <p>The biggest camera leap in iPhone history. 8x optical-quality zoom reaches further than any iPhone before it. Next-gen tetraprism lens.</p>
+        <span class="focal-badge">ƒ/2.8 · 56% larger sensor</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Telephoto Zoom Section -->
+  <section class="camera-section zoom-section" id="zoom">
+    <div class="container">
+      <p class="section-eyebrow">Telephoto Camera</p>
+      <h2 class="section-headline">8× zoom. No compromise.</h2>
+      <p class="section-body">The next-generation tetraprism design delivers an unprecedented 8x optical-quality zoom — the equivalent of a 200mm professional telephoto lens — in your pocket.</p>
+    </div>
+    <div class="zoom-visual">
+      <div class="zoom-bar">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div style="width:60px;height:120px;background:linear-gradient(to top,rgba(189,139,74,0.6),rgba(189,139,74,0.1));border-radius:8px 8px 0 0;"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div style="width:60px;height:160px;background:linear-gradient(to top,rgba(189,139,74,0.6),rgba(189,139,74,0.1));border-radius:8px 8px 0 0;"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div style="width:60px;height:200px;background:linear-gradient(to top,rgba(255,255,255,0.8),rgba(189,139,74,0.4));border-radius:8px 8px 0 0;box-shadow:0 0 20px rgba(189,139,74,0.3);"></div>
+        </div>
+      </div>
+      <div class="zoom-legend">
+        <div class="zoom-legend-item"><div class="num">0.5×</div><div class="label">Ultra Wide</div></div>
+        <div class="zoom-legend-item"><div class="num">1×</div><div class="label">Fusion</div></div>
+        <div class="zoom-legend-item"><div class="num">2×</div><div class="label">2x Telephoto</div></div>
+        <div class="zoom-legend-item"><div class="num">5×</div><div class="label">5x Optical</div></div>
+        <div class="zoom-legend-item"><div class="num">8×</div><div class="label">8x Optical-Quality</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pro Fusion Computational Photography -->
+  <section class="camera-section fusion-section">
+    <div class="container">
+      <p class="section-eyebrow">Computational Photography</p>
+      <h2 class="section-headline">Pro Fusion.<br>Beyond hardware.</h2>
+    </div>
+    <div class="fusion-grid">
+      <div class="fusion-text reveal">
+        <h3>48MP ProRAW. Full resolution. Total control.</h3>
+        <p>ProRAW gives you maximum creative flexibility — all 48 megapixels with Apple's computational photography pipeline intact. Adjust exposure, color, and detail long after the shot.</p>
+        <ul class="fusion-features">
+          <li>48MP ProRAW across all three lenses</li>
+          <li>HEIF Max for space-efficient full resolution</li>
+          <li>Deep Fusion for mid-to-low light excellence</li>
+          <li>Smart HDR 5 with enhanced highlight detail</li>
+          <li>Photonic Engine for 2x faster Night mode processing</li>
+          <li>LiDAR Scanner for instant autofocus in low light</li>
+        </ul>
+      </div>
+      <div class="fusion-visual reveal">
+        <div class="fusion-tile">Fusion</div>
+        <div class="fusion-tile">Ultra Wide</div>
+        <div class="fusion-tile">Telephoto</div>
+        <div class="fusion-tile">Deep Fusion</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cinematic Video -->
+  <section class="camera-section cinematic-section">
+    <div class="cinematic-bg"></div>
+    <div class="cinematic-content container">
+      <p class="section-eyebrow">Cinematic Video</p>
+      <h2 class="section-headline">4K 120fps.<br>Cinema in your pocket.</h2>
+      <p class="section-body" style="text-align:center;margin:0 auto 0;">The first iPhone capable of shooting 4K ProRes at 120fps. Capture motion with unprecedented clarity — then play it back in dramatic slow motion.</p>
+    </div>
+    <div class="cinematic-grid" style="position:relative;z-index:1;">
+      <div class="cinema-card reveal">
+        <div class="cinema-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="4" y="10" width="32" height="20" rx="3" stroke="#bd8b4a" stroke-width="1.5"/>
+            <polygon points="16,15 28,20 16,25" fill="#bd8b4a"/>
+          </svg>
+        </div>
+        <h4>4K/120fps Cinematic</h4>
+        <p>Record cinema-grade footage directly to external SSD storage via USB-C. 4K ProRes at 120 frames per second. Every frame is a 33MP still.</p>
+        <span class="cinema-tag">ProRes</span>
+      </div>
+      <div class="cinema-card reveal">
+        <div class="cinema-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="14" stroke="#bd8b4a" stroke-width="1.5"/>
+            <path d="M20 10v20M10 20h20" stroke="#bd8b4a" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h4>Spatial Photo & Video</h4>
+        <p>Capture immersive spatial content for Apple Vision Pro. Relive your memories with depth, dimension, and extraordinary clarity.</p>
+        <span class="cinema-tag">Spatial</span>
+      </div>
+      <div class="cinema-card reveal">
+        <div class="cinema-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path d="M20 4L36 36H4L20 4z" stroke="#bd8b4a" stroke-width="1.5" fill="none"/>
+            <circle cx="20" cy="24" r="6" stroke="#bd8b4a" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h4>Log Encoding</h4>
+        <p>Academy Color Encoding System (ACES) support. Shoot flat for maximum post-production flexibility. Color grade like a Hollywood professional.</p>
+        <span class="cinema-tag">ACES</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Display Section -->
+  <section class="display-section" id="display">
+    <div class="container">
+      <p class="section-eyebrow">Display</p>
+      <h2 class="section-headline" style="max-width:100%;">6.9″ Super Retina XDR.<br>Always extraordinary.</h2>
+      <p class="section-body" style="max-width:100%;margin:0 auto 0;">ProMotion with adaptive refresh rates up to 120Hz. Always-On display. Peak HDR brightness of 2,000 nits.</p>
+      <div class="display-screen">
+        <div class="screen-text">
+          <div class="big">2,000 nits</div>
+          <div class="small">peak outdoor brightness</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chip Section -->
+  <section class="chip-section" id="chip">
+    <div class="chip-grid">
+      <div class="chip-text reveal">
+        <p class="section-eyebrow">A19 Pro Chip</p>
+        <h2>The most powerful<br>chip ever in a smartphone.</h2>
+        <p>3nm architecture. 6-core CPU with 2 performance cores and 4 efficiency cores. 6-core GPU. 16-core Neural Engine capable of 38 trillion operations per second.</p>
+        <div class="chip-stats">
+          <div class="chip-stat"><div class="num">38 TOPS</div><div class="desc">Neural Engine</div></div>
+          <div class="chip-stat"><div class="num">6-core</div><div class="desc">GPU with hardware ray tracing</div></div>
+          <div class="chip-stat"><div class="num">3nm</div><div class="desc">N3E process</div></div>
+          <div class="chip-stat"><div class="num">38T</div><div class="desc">operations per second</div></div>
+        </div>
+      </div>
+      <div class="chip-visual reveal"></div>
+    </div>
+  </section>
+
+  <!-- Colors -->
+  <section class="colors-section" id="design">
+    <div class="container">
+      <p class="section-eyebrow">Finish</p>
+      <h2 class="section-headline" style="max-width:100%;">Three finishes.<br>One standard of excellence.</h2>
+      <p class="section-body" style="max-width:100%;margin:0 auto 0;">Heat-forged aluminum unibody. Ceramic Shield 2 front and back. All-new colorations developed through an advanced anodizing process.</p>
+    </div>
+    <div class="color-swatches">
+      <div class="swatch selected">
+        <div class="swatch-circle" style="background:linear-gradient(135deg,#e8e8ed,#c8c8d0);"></div>
+        <span class="swatch-label">Silver</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-circle" style="background:linear-gradient(135deg,#e07850,#c05030);"></div>
+        <span class="swatch-label">Cosmic Orange</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch-circle" style="background:linear-gradient(135deg,#1a3050,#2a4870);"></div>
+        <span class="swatch-label">Deep Blue</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="buy">
+    <div class="container">
+      <h2 class="text-gradient">Ready to go Pro?</h2>
+      <p>iPhone 17 Pro Max. The most powerful iPhone ever made.</p>
+      <div class="price-line">From <span>$1,199</span> or <span>$49.95/mo.</span> for 24 mo.</div>
+      <div class="cta-buttons">
+        <a href="#" class="btn-primary">Pre-order Now →</a>
+        <a href="#" class="btn-secondary">Compare iPhones</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">iPhone 17 Pro Max</span>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Legal</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <span class="footer-copy">© 2025 Apple Inc. This is a fan-made landing page.</span>
+    </div>
+  </footer>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Swatch selection
+    document.querySelectorAll('.swatch').forEach(s => {
+      s.addEventListener('click', () => {
+        document.querySelectorAll('.swatch').forEach(x => x.classList.remove('selected'));
+        s.classList.add('selected');
+      });
+    });
+  </script>
+</body>
+</html>
